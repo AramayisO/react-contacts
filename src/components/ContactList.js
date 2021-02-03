@@ -1,6 +1,11 @@
+import { useContext } from 'react';
+import ContactContext from '../contexts/ContactContext';
+import { useContacts } from '../hooks';
 import ContactItem from './ContactItem';
 
-const ContactList = ({ contacts }) => {
+const ContactList = () => {
+
+    const { contacts } = useContacts();
 
     return (
         <div>

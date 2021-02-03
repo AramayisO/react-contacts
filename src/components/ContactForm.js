@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useContext } from 'react';
+import ContactContext from '../contexts/ContactContext';
+import { useContacts } from '../hooks';
 
 const ContactForm = (props) => {
 
@@ -8,6 +10,10 @@ const ContactForm = (props) => {
     const [email, setEmail] = useState('');
     const [address, setAddress] = useState('');
     const [profileImageSrc, setProfileImageSrc] = useState('');
+
+    const fileInput = useRef();
+
+    const { addContact } = useContacts();
 
     const handleImageUpload = (event) => {
         const file = event.target.files[0];
@@ -31,14 +37,14 @@ const ContactForm = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        props.onSubmit({
+        addContact({
             firstName,
             lastName,
             phoneNumber,
             email,
             address,
             profileImage: profileImageSrc
-        });
+        })
         clearInputs();
     }
 
@@ -48,6 +54,7 @@ const ContactForm = (props) => {
                 <img 
                     src={profileImageSrc || 'https://via.placeholder.com/150'}
                     alt='Profile image preview'
+                    onClick={() => fileInput.current.click()}
                 />
             </div>
             <div>
@@ -81,7 +88,8 @@ const ContactForm = (props) => {
                     value={address} 
                     onChange={(e) => setAddress(e.target.value)} 
                 />
-                <input 
+                <input
+                    ref={fileInput}
                     type="file"
                     onChange={handleImageUpload}
                 />

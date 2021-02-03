@@ -27,6 +27,7 @@ body {
 .ContactForm img {
   width: 150px;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .ContactForm input {
@@ -42,6 +43,7 @@ body {
 
 .ContactForm input[type="file"] {
   border: none;
+  display: none;
 }
 
 .ContactForm button[type="submit"] {
