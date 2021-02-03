@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 const ContactForm = (props) => {
 
@@ -21,53 +21,50 @@ const ContactForm = (props) => {
     }
 
     return (
-        <form>
-            <label>First Name:</label>
-            <input 
-                type="text" 
-                value={firstName} 
-                onChange={(e) => setFirstName(e.target.value)} 
-            />
-            <br />
-            <label>Last Name:</label>
-            <input 
-                type="text" 
-                value={lastName} 
-                onChange={(e) => setLastName(e.target.value)}  
-            />
-            <br />
-            <label>Phone Number:</label>
-            <input 
-                type="tel" 
-                value={phoneNumber} 
-                onChange={(e) => setPhoneNumber(e.target.value)}  
-            />
-            <br />
-            <label>Email:</label>
-            <input 
-                type="email" 
-                value={email} 
-                onChange={(e) => setEmail(e.target.value)} 
-            />
-            <br />
-            <label>Address:</label>
-            <input 
-                type="text" 
-                value={address} 
-                onChange={(e) => setAddress(e.target.value)} 
-            />
-            <br />
-            <img 
-                src={profileImageSrc}
-                alt='Profile image preview'
-                width="100px"
-            />
-            <input 
-                type="file"
-                onChange={handleImageUpload}
-            />
-            <br />
-            <button type="submit">ADD CONTACT</button>
+        <form className="ContactForm">
+            <div className="ContactForm_avatar-wrapper">
+                <img 
+                    src={profileImageSrc || 'https://via.placeholder.com/150'}
+                    alt='Profile image preview'
+                />
+            </div>
+            <div>
+                <input 
+                    type="text" 
+                    placeholder="First Name"
+                    value={firstName} 
+                    onChange={(e) => setFirstName(e.target.value)} 
+                />
+                <input 
+                    type="text" 
+                    placeholder="Last Name"
+                    value={lastName} 
+                    onChange={(e) => setLastName(e.target.value)}  
+                />
+                <input 
+                    type="tel" 
+                    placeholder="Phone Number"
+                    value={phoneNumber} 
+                    onChange={(e) => setPhoneNumber(e.target.value)}  
+                />
+                <input 
+                    type="email" 
+                    placeholder="Email"
+                    value={email} 
+                    onChange={(e) => setEmail(e.target.value)} 
+                />
+                <input 
+                    type="text" 
+                    placeholder="Address"
+                    value={address} 
+                    onChange={(e) => setAddress(e.target.value)} 
+                />
+                <input 
+                    type="file"
+                    onChange={handleImageUpload}
+                />
+                <button type="submit">ADD CONTACT</button>
+            </div>
         </form>
     )
 
