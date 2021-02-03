@@ -20,8 +20,30 @@ const ContactForm = (props) => {
         }
     }
 
+    const clearInputs = () => {
+        setFirstName('');
+        setLastName('');
+        setPhoneNumber('');
+        setEmail('');
+        setAddress('');
+        setProfileImageSrc('');
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        props.onSubmit({
+            firstName,
+            lastName,
+            phoneNumber,
+            email,
+            address,
+            profileImage: profileImageSrc
+        });
+        clearInputs();
+    }
+
     return (
-        <form className="ContactForm">
+        <form className="ContactForm" onSubmit={handleSubmit}>
             <div className="ContactForm_avatar-wrapper">
                 <img 
                     src={profileImageSrc || 'https://via.placeholder.com/150'}
