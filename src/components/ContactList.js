@@ -6,18 +6,19 @@ import ContactItem from './ContactItem';
 
 const ContactList = () => {
 
-    const { contacts } = useContacts();
+    const { contacts, removeContact } = useContacts();
     const { user, login, logout } = useContext(AuthContext)
 
     return (
         <div className="ContactList">
-            {contacts.map(contact => (
+            {contacts.map((contact, index) => (
                 <ContactItem
                     key={contact.phoneNumber}
                     firstName={contact.firstName}
                     lastName={contact.lastName}
                     profileImage={contact.profileImage}
                     phoneNumber={contact.phoneNumber}
+                    deleteContact={() => removeContact(index)}
                 />
             ))
             }
