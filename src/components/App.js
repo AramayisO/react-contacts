@@ -1,10 +1,8 @@
-import { useEffect, useState } from 'react';
-import ContactContext from '../contexts/ContactContext';
+import { useState } from 'react';
 import './App.css';
 import ContactProvider from '../providers/ContactProvider';
 import ContactForm from './ContactForm';
 import ContactList from './ContactList';
-import MyComponent from './MyComponent';
 import AuthContext from '../contexts/AuthContext';
 import LoginForm from './LoginForm';
 import LogoutButton from './LogoutButton';
@@ -34,11 +32,6 @@ const App = () => {
                 </div>
                 <ContactList />
                 <ContactForm />
-                <ContactContext.Consumer>
-                  {({ contacts, addContact, removeContact }) => 
-                    <MyComponent contacts={contacts} add={addContact} remove={removeContact} />
-                  }
-                </ContactContext.Consumer>
               </ContactProvider>
           }
       </AuthContext.Provider>
