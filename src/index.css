@@ -17,10 +17,11 @@ body {
   display: flex;
   justify-content: center;
   padding: 15px 0;
-  width: 80%;
+  width: 50%;
   margin: 0 auto;
   color: #4F4F4F;
   background-color: white;
+  box-shadow: 4px 4px 8px 0 #a5a5a5;
 }
 
 .ContactForm_avatar-wrapper {
