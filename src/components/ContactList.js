@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import AuthContext from '../contexts/AuthContext';
 import ContactContext from '../contexts/ContactContext';
 import { useContacts } from '../hooks';
 import ContactItem from './ContactItem';
@@ -6,6 +7,7 @@ import ContactItem from './ContactItem';
 const ContactList = () => {
 
     const { contacts } = useContacts();
+    const { user, login, logout } = useContext(AuthContext)
 
     return (
         <div className="ContactList">
