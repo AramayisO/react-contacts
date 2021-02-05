@@ -7,6 +7,7 @@ import ContactList from './ContactList';
 import MyComponent from './MyComponent';
 import AuthContext from '../contexts/AuthContext';
 import LoginForm from './LoginForm';
+import LogoutButton from './LogoutButton';
 
 const App = () => {
 
@@ -28,6 +29,9 @@ const App = () => {
           {!user
             ? <LoginForm />
             : <ContactProvider>
+                <div>
+                  <LogoutButton />
+                </div>
                 <ContactList />
                 <ContactForm />
                 <ContactContext.Consumer>
