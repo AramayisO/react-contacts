@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
-import ContactContext from './contexts/contactContext';
+import ContactContext from './contexts/ContactContext';
 
 ReactDOM.render(
   <React.StrictMode>

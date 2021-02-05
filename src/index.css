@@ -10,6 +10,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #E4E4E4;
 }
 
 .ContactForm {
@@ -17,7 +18,9 @@ body {
   justify-content: center;
   padding: 15px 0;
   width: 80%;
+  margin: 0 auto;
   color: #4F4F4F;
+  background-color: white;
 }
 
 .ContactForm_avatar-wrapper {
@@ -56,4 +59,33 @@ body {
 
 .ContactForm button[type="submit"]:hover {
   background-color: #DEDEDE;
+}
+
+.ContactList {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.ContactItem {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 15px;
+  background-color: white;
+  box-shadow: 4px 4px 8px 0 #a5a5a5;
+  padding: 15px;
+}
+
+.ContactItem img {
+  width: 150px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.ContactItem button {
+  margin-left: auto;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border-radius: 50%;
 }

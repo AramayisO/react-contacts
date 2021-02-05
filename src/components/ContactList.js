@@ -8,7 +8,7 @@ const ContactList = () => {
     const { contacts } = useContacts();
 
     return (
-        <div>
+        <div className="ContactList">
             {contacts.map(contact => (
                 <ContactItem
                     key={contact.phoneNumber}
